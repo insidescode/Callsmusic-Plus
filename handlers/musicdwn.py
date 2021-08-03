@@ -130,7 +130,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('**Please Wait! Im Searching For Your Song 🔎...**')
+    m = message.reply('**🔎 Please Wait! Im Searching For Your Song...**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -149,17 +149,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "Sorry To Say but I can't find anything ❌!\n\nTry Another Keyword! Btw you spelled it properly 🤔?"
+            "Sorry To Say but I can't find anything ❌!\n\nTry Another Keyword! Btw you spelled it properly?"
         )
         print(str(e))
         return
-    m.edit("**Downloading Your Song! Please Wait ⏰**")
+    m.edit("**Downloading Your Song! Please Wait ⏳**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎙 **Title**: [{title[:35]}]({link})\n🎬 **Source**: `YouTube`\n⏱️ **Song Duration**: `{duration}`\n👁‍🗨 **Song Views**: `{views}`\n\n**Uploaded By**: **@{BOT_USERNAME}** \n **Join @{UPDATES_CHANNEL} 😉** '
+        rep = f'🎵 **Title**: [{title[:35]}]({link})\n🗒 **Source**: `YouTube`\n🕓 **Song Duration**: `{duration}`\n👀 **Song Views**: `{views}`\n\n**Uploaded By**: 👤**@{BOT_USERNAME}** \n **Join @{UPDATES_CHANNEL} 😉** '
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -308,7 +308,7 @@ async def ytmusic(client, message: Message):
     urlissed = get_text(message)
 
     pablo = await client.send_message(
-        message.chat.id, f"`Getting {urlissed} From Youtube Servers. Please Wait For Moment!`"
+        message.chat.id, f"`Getting {urlissed} From Zer0Byte 2.0 Servers. Please Wait For Moment!`"
     )
     if not urlissed:
         await pablo.edit("Invalid Command Syntax")
@@ -358,8 +358,8 @@ async def ytmusic(client, message: Message):
 
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton("📺 Watch On YouTube 📺", url=f"{mo}")]])
-    capy = f"**🎧️ Music Video Name:** `{thum}` \n\n**👨‍💻️ Your Keyword:** `{urlissed}` \n**😉️ YouTube Channel:** `{thums}` \n**🔗️ Video Link :** `{mo}`"
+    YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton("Youtube", url=f"{mo}")]])
+    capy = f"**🎵Video Name:** `{thum}` \n\n**👤 Your Keyword:** `{urlissed}` \n**🧩 YouTube Channel:** `{thums}` \n**🔗️ Video Link :** `{mo}`"
     await client.send_video(
         message.chat.id,
         video=open(file_stark, "rb"),
@@ -373,7 +373,7 @@ async def ytmusic(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"`Please Wait! I'm Uploading` **{urlissed}** `From YouTube!`",
+            f"`Please Wait! Uploading` **{urlissed}** `From Zer0Byte 2.0 Server!`",
             file_stark,
         ),
     )
