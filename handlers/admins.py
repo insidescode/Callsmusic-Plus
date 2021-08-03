@@ -39,7 +39,7 @@ async def update_admin(client, message):
     for u in admins:
         new_ads.append(u.user.id)
     fuck[message.chat.id] = new_ads
-    await message.reply_text("**Successfully Updated Admin List ✅!**")
+    await message.reply_text("**🌟 Successfully Updated Admin List 🌟!**")
 
 
 # Control Menu Of Player
@@ -48,31 +48,31 @@ async def update_admin(client, message):
 @authorized_users_only
 async def controlset(_, message: Message):
     await message.reply_text(
-        "**Successfully Opened Control Menu Of Streamer Player!**",
+        "**Successfully Opened Control Menu Of Zer0Byte 2.0 Player!**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⏸ Pause ⏸", callback_data="cbpause"
+                        "⏸", callback_data="cbpause"
                     ),
                     InlineKeyboardButton(
-                        "▶️ Resume ▶️", callback_data="cbresume"
+                        "▶️", callback_data="cbresume"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⏩ Skip ⏩", callback_data="cbskip"
+                        "⏭", callback_data="cbskip"
                     ),
                     InlineKeyboardButton(
-                        "⏹ End ⏹", callback_data="cbend"
+                        "⏹", callback_data="cbend"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔇 Mute 🔇", callback_data="cbmute"
+                        "🔇 Mute", callback_data="cbmute"
                     ),
                     InlineKeyboardButton(
-                        "🔈 Unmute 🔈", callback_data="cbunmute"
+                        "🔊 Unmute", callback_data="cbunmute"
                     )
                 ]
             ]
@@ -88,16 +88,16 @@ async def pause(_, message: Message):
     if callsmusic.pause(message.chat.id):
         await message.reply_text("⏸ Paused")
     else:
-        await message.reply_text("❗️ Nothing is playing")
+        await message.reply_text("Nothing Playing")
 
 @Client.on_message(command(["resume", f"resume@{BOT_USERNAME}", "r"]))
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
     if callsmusic.resume(message.chat.id):
-        await message.reply_text("🎧 Resumed")
+        await message.reply_text("Resumed...")
     else:
-        await message.reply_text("❗️ Nothing is paused")
+        await message.reply_text("Nothing Paused")
 
 
 @Client.on_message(command(["end", f"end@{BOT_USERNAME}", "e"]))
@@ -105,7 +105,7 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     if message.chat.id not in callsmusic.active_chats:
-        await message.reply_text("❗️ Nothing is playing")
+        await message.reply_text("Nothing Playing")
     else:
         try:
             queues.clear(message.chat.id)
@@ -113,7 +113,7 @@ async def stop(_, message: Message):
             pass
 
         await callsmusic.stop(message.chat.id)
-        await message.reply_text("✅ Cleared the queue and left the Voice Chat!")
+        await message.reply_text("✔️ Cleared The Queue And Left The Voice Chat!")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "s"]))
@@ -132,7 +132,7 @@ async def skip(_, message: Message):
                 message.chat.id, queues.get(message.chat.id)["file"]
             )
 
-        await message.reply_text("🗑 Skipped")
+        await message.reply_text("⏭ Skipped")
 
 
 @Client.on_message(command(["mute", f"mute@{BOT_USERNAME}", "m"]))
@@ -175,9 +175,9 @@ async def cbpause(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbresume"))
 async def cbresume(_, query: CallbackQuery):
     if callsmusic.resume(query.message.chat.id):
-        await query.edit_message_text("🎧 Song Resumed", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("🎵 Song Resumed", reply_markup=BACK_BUTTON)
     else:
-        await query.edit_message_text("❗️ Nothing is paused, Lol!", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Nothing is paused, :p!", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbend"))
 async def cbend(_, query: CallbackQuery):
@@ -190,7 +190,7 @@ async def cbend(_, query: CallbackQuery):
             pass
 
         await callsmusic.stop(query.message.chat.id)
-        await query.edit_message_text("✅ Cleared the queue and left the Voice Chat!", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("✔️ Cleared the queue and left the Voice Chat!", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbskip"))
 async def cbskip(_, query: CallbackQuery):
@@ -237,24 +237,24 @@ async def cbunmute(_, query: CallbackQuery):
 @authorized_users_only
 async def delcmdc(_, message: Message):
     if len(message.command) != 2:
-        await message.reply_text("Lol! This isn't the way to use this command 😂! Please read **/help** ☺️")
+        await message.reply_text("I Think You Should First Learn How To Use The Commands! Get Some Help @Zer0ByteSupport")
         return
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
     chat_id = message.chat.id
     if status == "on":
         if await delcmd_is_on(message.chat.id):
-            await message.reply_text("Eh! You are already enabled This Service 😉")
+            await message.reply_text("Eh! You are already enabled This Service")
             return
         else:
             await delcmd_on(chat_id)
             await message.reply_text(
-                "Successfully Enabled Delete Command Feature For This Chat 😇"
+                "✔️ Successfully Enabled Delete Command Feature For This Chat"
             )
     elif status == "off":
         await delcmd_off(chat_id)
-        await message.reply_text("Successfully Disabled Delete Command Feature For This Chat 😌")
+        await message.reply_text("Successfully Disabled Delete Command Feature For This Chat")
     else:
         await message.reply_text(
-            "Can't Understand What you're talking about! Maybe Read **/help** 🤔"
+            "Can't Understand What you're talking about! Maybe Read **/help**"
         )
