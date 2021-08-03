@@ -57,7 +57,7 @@ async def ubkickme(_, message: Message):
     await NEXAUB.leave_chat(message.chat.id)
     await i_go_away.edit("`Successfully Leaved This Chat!`")
   except Exception as lol:
-    await i_go_away.edit(f"`Can't Leave This Chat!, What a cruel world!` \n\n**Error:** `{lol}`")
+    await i_go_away.edit(f"`Can't Leave This Chat!, What a cruel world!` \n\n**Error69:** `{lol}`")
 
 
 # Alive Message
@@ -65,7 +65,7 @@ async def ubkickme(_, message: Message):
 async def ubalive(_, message: Message):
   alive_msg = await message.edit_text("`Processing...`")
   alive_pic = "cache/NexaUB.jpg"
-  await message.reply_photo(alive_pic, caption=f"**🌀 Nexa Music Userbot is Alive 🌀** \n\n**🤖 Version** \n ↳**Bot Version:** `{cp_version}` \n ↳**Userbot Version:** `{nexaub_version}` \n\n**🐬 Info**\n ↳**Music Bot:** @{BOT_USERNAME} \n ↳**Owner:** [Click Here](tg://user?id={BOT_OWNER})")
+  await message.reply_photo(alive_pic, caption=f"**Zer0Byte 2.0 Is Up and Running** \n\n**🔮 Zer0Byte Version** \n **🧬 ₿:** `{cp_version}` \n ↳**🔥 Pyrogram:** `{nexaub_version}` \n\n**🧬 Info**\n ↳**Music Bot:** @{BOT_USERNAME} \n ↳**Owner:** [Nub Here](tg://user?id={BOT_OWNER})")
   await alive_msg.delete()
 
 
