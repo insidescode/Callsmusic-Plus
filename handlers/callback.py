@@ -15,31 +15,31 @@ async def close(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbback"))
 async def cbback(_, query: CallbackQuery):
     await query.edit_message_text(
-        "**Here is The Control Menu Of Streamer!**",
+        "**Here is The Control Menu Of Zer0Byte 2.0 Player!**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⏸ Pause ⏸", callback_data="cbpause"
+                        "⏸", callback_data="cbpause"
                     ),
                     InlineKeyboardButton(
-                        "▶️ Resume ▶️", callback_data="cbresume"
+                        "▶️", callback_data="cbresume"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⏩ Skip ⏩", callback_data="cbskip"
+                        "⏭", callback_data="cbskip"
                     ),
                     InlineKeyboardButton(
-                        "⏹ End ⏹", callback_data="cbend"
+                        "⏹", callback_data="cbend"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔇 Mute 🔇", callback_data="cbmute"
+                        "🔇 Mute", callback_data="cbmute"
                     ),
                     InlineKeyboardButton(
-                        "🔈 Unmute 🔈", callback_data="cbunmute"
+                        "🔊 Unmute", callback_data="cbunmute"
                     )
                 ]
             ]
@@ -52,36 +52,36 @@ async def cbback(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbstart"))
 async def startcb(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Hi {query.message.from_user.mention} 😉️!</b>
+        f"""<b>✨ Welcome {query.message.from_user.mention} !</b>
 
-I'm The Nexa Music Bot! A Powerful Bot to Play Music in Your Group Voice Chat 😇!
+💭 Zer0Byte 2.0 **allows** you to **play music** on groups through the new **Telegram**'s voice chats!
 
-Also I have more features! Please hit on **/help** to see them 😘!
+💡 **Find out** all the **Bot's commands** and how they **work** by Clicking on » 📚 Help Menu!
 
 Made with ❤️ **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add Me To Your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "➕ Add Me To a Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
+                        "⚙️ Help Menu", callback_data="cbhelpmenu"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📦 Source Code 📦", url="https://github.com/Itz-fork/Callsmusic-Plus"
+                        "🗃 Source Code", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🔔 Updates", url=f"https://t.me/Zer0ByteOfficial"
                     ),
                     InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "👥 Support", url="https://t.me/Zer0ByteSupport"
                     )
                 ]
             ]
@@ -94,38 +94,38 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbhelpmenu"))
 async def cbhelpmenu(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Hi {query.message.from_user.mention} 😉️!</b>
+        f"""<b>✨ Hellow {query.message.from_user.mention} !</b>
 
-**Here is the Help Menu For This Bot 😊!**""",
+**Help Menu Of Zer0Byte 2.0!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🤔 How To Use Me 🤔", callback_data="cbhowtouse"
+                        "❓How To Use Zer0Byte 2.0", callback_data="cbhowtouse"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Get Lyrics", callback_data="cbgetlyrics"
+                        "🎼 Lyrics", callback_data="cbgetlyrics"
                     ),
                     InlineKeyboardButton(
-                        "YT Search", callback_data="cbytsearch"
+                        "🔩 YT HELP", callback_data="cbytsearch"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Music Downloader", callback_data="cbmusicdown"
+                        "🎵Music Downloader", callback_data="cbmusicdown"
                     ),
                     InlineKeyboardButton(
-                        "YT Video Downloader", callback_data="cbytviddown"
+                        "📹YT Video Downloader", callback_data="cbytviddown"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Delete Commands", callback_data="cbdelcmds"
+                        "🗑Delete Commands", callback_data="cbdelcmds"
                     ),
                     InlineKeyboardButton(
-                        "Quotely", callback_data="cbquotely"
+                        "🔮 Quotely", callback_data="cbquotely"
                     )
                 ]
             ]
@@ -137,20 +137,20 @@ async def cbhelpmenu(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbhowtouse"))
 async def cbhowtouse(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>How To Use This Bot?</b>
+        f"""<b>How To Use Zer0Byte 2.0?</b>
 
-**Setting Up The Bot:**
+**Setting Up Zer0Byte 2.0:**
     1. Add **{BOT_USERNAME}** Bot and @{(await USER.get_me()).username} To Your Group! (Send `/joingrp` to your group! Streamer Will Automatically join)
     2. Give Admin To **{BOT_USERNAME}** and **@{(await USER.get_me()).username}** !
 
  
 **Using Player Commands:**
-    1. **Group Admin Only Commands 👮 ,**
+    1. **Group Admin Only Commands 🛠 ,**
      - `/play` - Reply to supported url, Reply to Audio File or Send `/play` with [Supported Url](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
        **Example:** `/play https://www.youtube.com/watch?v=ALZHF5UqnU4`
         
      - `/nplay` - Play Song by Name. (Currenty Supported for Youtube Only)
-       **Example:** `/nplay faded`
+       **Example:** `/nplay Death of a Hero`
     
      - `/skip` - Skip currenly playing song.
     
@@ -176,7 +176,7 @@ async def cbhowtouse(_, query: CallbackQuery):
 
 **Supported Url List:** https://ytdl-org.github.io/youtube-dl/supportedsites.html
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -184,7 +184,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
                         "Supported Url List", url="https://ytdl-org.github.io/youtube-dl/supportedsites.html"
                     ),
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -198,21 +198,21 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbgetlyrics"))
 async def cbgetlyrics(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For Lyrics Plugin</b>
+        f"""<b>Zer0Byte 2.0 Lyrics  </b>
 
 **Feature:** Get Lyrics For Provided Song Name!
 
 **Usage:**
     - Send Your Song Name with `/lyrics` command.
 
-**Example:** `/lyrics faded`
+**Example:** `/lyrics Carry me away`
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -225,7 +225,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbytsearch"))
 async def cbytsearch(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For YT Search Plugin</b>
+        f"""<b>Zer0Byte 2.0 YT Search</b>
 
 **Feature:** Search Youtube Videos Inline or Using a Command!
 
@@ -243,12 +243,12 @@ async def cbytsearch(_, query: CallbackQuery):
     2. Example For Search via Command
      - `/ytsearch faded`
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -261,7 +261,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbmusicdown"))
 async def cbmusicdown(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For Music Downloader Plugin</b>
+        f"""<b>Zer0Byte 2.0 YT Music</b>
 
 **Feature:** Download Music As Audio From YouTube, Saavn, Deezer
 
@@ -285,12 +285,12 @@ async def cbmusicdown(_, query: CallbackQuery):
     3. Example For Deezer Audio Download,
       - `/deezer unity`
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -303,7 +303,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbytviddown"))
 async def cbytviddown(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For YT Video Downloader Plugin</b>
+        f"""<b>Zer0Byte 2.0 YT Video Downloader</b>
 
 **Feature:** Download Youtube Videos For Provided Name!
 
@@ -312,12 +312,12 @@ async def cbytviddown(_, query: CallbackQuery):
 
 **Example:** `/ytvid faded`
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -330,7 +330,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbdelcmds"))
 async def cbdelcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For Delete Command Plugin</b>
+        f"""<b>Zer0Byte 2.0 Delete CMDs</b>
 
 **Feature:** Delete Every Commands Sent By Users to Avoid Spam in Your Group!
 
@@ -341,12 +341,12 @@ async def cbdelcmds(_, query: CallbackQuery):
     2. To Turn Off This,
       - Send `/delcmd off` command.
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -359,7 +359,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
 @Client.on_callback_query(filters.regex("cbquotely"))
 async def cbquotely(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For Quotely Plugin</b>
+        f"""<b>Zer0Byte 2.0 Quotely</b>
 
 **Feature:** Quote Messages Like Quotely Bot!
 
@@ -383,12 +383,12 @@ async def cbquotely(_, query: CallbackQuery):
     3. Example Quote Message with Reply,
       - `/q r` reply to a text message
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "←", callback_data="cbhelpmenu"
                     )
                 ]
             ]
