@@ -23,40 +23,40 @@ async def start(_, message: Message):
             await db.add_user(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
+        text=f"**#BOTSTARTED ** \n#NEWUSER **Started Zer0Byte 2.0!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
         parse_mode="markdown"
     )
     await message.reply_text(
-        f"""<b>Hi {message.from_user.mention} 😉️!</b>
+        f"""<b>✨ Welcome {message.from_user.mention} !</b>
 
-I'm The Nexa Music Bot! A Powerful Bot to Play Music in Your Group Voice Chat 😇!
+💭 Zer0Byte 2.0 **allows you** to **play music** on **groups** through the new **Telegram's voice chats**!
 
-Also I have more features! Please hit on **/help** to see them 😘!
+💡 **Find out** all the **Bot's commands** and how they **work*8 by clicking on the » ⚙️ **Help Menu** button!
 
-Made with ❤️ **@{UPDATES_CHANNEL}**""",
+📣 Powered By:  **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add Me To Your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "➕ Add Me To a Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
+                        "⚙️ Help Menu", callback_data="cbhelpmenu"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📦 Source Code 📦", url="https://github.com/Itz-fork/Callsmusic-Plus"
+                        "🗃 Source Code", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "Updates", url=f"https://t.me/Zer0ByteOfficial"
                     ),
                     InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "Support", url="https://t.me/Zer0ByteSupport"
                     )
                 ]
             ]
@@ -75,42 +75,42 @@ async def help(_, message: Message):
             await db.add_user(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
+        text=f"**#BOTSTARTED ** \n#NEWUSER **Started Zer0Byte 2.0!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
         parse_mode="markdown"
     )
     await message.reply_text(
-        f"""<b>Hi {message.from_user.mention} 😉️!</b>
+        f"""<b>✨ Hellow {message.from_user.mention} !</b>
 
-**Here is the Help Menu For This Bot 😊!**""",
+**Here is the Help Menu Zer0Byte 2.0!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🤔 How To Use Me 🤔", callback_data="cbhowtouse"
+                        "❓How To Use Zer0Byte 2.0", callback_data="cbhowtouse"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Get Lyrics", callback_data="cbgetlyrics"
+                        "🎼 Lyrics", callback_data="cbgetlyrics"
                     ),
                     InlineKeyboardButton(
-                        "YT Search", callback_data="cbytsearch"
+                        "🔎 YT Search", callback_data="cbytsearch"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Music Downloader", callback_data="cbmusicdown"
+                        "🎶Music Downloader", callback_data="cbmusicdown"
                     ),
                     InlineKeyboardButton(
-                        "YT Video Downloader", callback_data="cbytviddown"
+                        "📹YT Video Downloader", callback_data="cbytviddown"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Delete Commands", callback_data="cbdelcmds"
+                        "🗑 Del CMDs", callback_data="cbdelcmds"
                     ),
                     InlineKeyboardButton(
-                        "Quotely", callback_data="cbquotely"
+                        "📌 Quotely", callback_data="cbquotely"
                     )
                 ]
             ]
@@ -127,17 +127,17 @@ async def credits2(_, message: Message):
             await db.add_user(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
+        text=f"**#BOTSTARTED ** \n#NEWUSER **Started Zer0Byte 2.0!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
         parse_mode="markdown"
     )
     await message.reply_text(
-        f"""<b>Hi {message.from_user.first_name} 😉️!</b>
+        f"""<b>Hi {message.from_user.first_name} !</b>
 
-__Note!__ ⚠️: This Project Is <b>Not Fully Owned By Me</b> !
+__Note!__ ⚠️: This Project Is <b>Not Fully Owned By @Zer0ByteOfficial</b> !
 
 Credits To,
 
-<b><a href="https://github.com/CallsMusic">CallsMusic</a></b> - For Callsmusic (Main Code ❤️) !
+<b><a href="https://github.com/CallsMusic">CallsMusic</a></b> - For Callsmusic !
 <b>Mr Dark Prince</b>
 <b>TheHamkercat</b>
 <b>AbirHasan2005</b>
@@ -145,17 +145,17 @@ Credits To,
 <b>TeamDaisyX</b>
 <b>N A C</b>
 
-Made with ❤️ by **@{UPDATES_CHANNEL}**""",
+📣 Powered By: **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🔔 Updates", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "👥 Support", url="https://t.me/Zer0ByteSupport"
                     )
                 ]
             ]
@@ -173,34 +173,34 @@ async def vc(_, message: Message):
             await db.add_user(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
+        text=f"**#BOTSTARTED ** \n#NEWUSER **Started Zer0Byte 2.0!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
         parse_mode="markdown"
     )
     VC_LINK = f"https://t.me/{message.chat.username}?voicechat"
     await message.reply_text(
-        f"""<b>Hi {message.from_user.first_name} 😉️!</b>
+        f"""<b>Hellow 👋 {message.from_user.first_name} !</b>
 
 
-             😌️  **Voice Chat Link** 😌️
-____________________------------______________________
+             ⚡️  **Voice Chat Link** ⚡️
 
-👉️ [Here Is Your Voice Chat Link](https://t.me/{message.chat.username}?voicechat) 👈️
-____________________------------______________________
 
-Enjoy 😌️❤️!""",
+[Here Is Your Voice Chat Link](https://t.me/{message.chat.username}?voicechat)
+
+
+ZER0BYTE™""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "↗️ Share Voice Chat Invitation ↗️", url=f"https://t.me/share/url?url=**Join%20Our%20Group%20Voice%20Chat%20😉%20%20{VC_LINK}%20❤️**"
+                        "🔗 Share Voice Chat Link", url=f"https://t.me/share/url?url=**Join%20Our%20Group%20Voice%20Chat%20😉%20%20{VC_LINK}%20❤️**"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔰️ Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🔔 Updates", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                     InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "👥 Support", url="https://t.me/Zer0ByteSupport"
                     )
                 ]
             ]
@@ -218,19 +218,19 @@ async def search(_, message: Message):
             await db.add_user(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
+        text=f"**#BOTSTARTED** \n#NEWUSER **Started Zer0Byte 2.0!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
         parse_mode="markdown"
     )
     await message.reply_text(
-        "💁🏻‍♂️ Do you want to search for a YouTube video?",
+        "Do you want to search for a YouTube video?",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "✅ Yeah", switch_inline_query_current_chat=""
+                        "YES", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "Nope ❌", callback_data="close"
+                        "NO", callback_data="close"
                     )
                 ]
             ]
