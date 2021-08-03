@@ -38,7 +38,7 @@ async def botstats(_, message: Message):
     disk_usage = psutil.disk_usage('/').percent
     total_users = await db.total_users_count()
     await message.reply_text(
-        text=f"**💫 Bot Stats Of @{BOT_USERNAME} 💫** \n\n**🤖 Bot Version:** `V2.9.1` \n\n**👥 Users:** \n ↳**PM'ed Users:** `{total_users}` \n\n**💾 Disk Usage,** \n ↳**Total Disk Space:** `{total}` \n ↳**Used:** `{used}({disk_usage}%)` \n ↳**Free:** `{free}` \n\n**🎛 Hardware Usage,** \n ↳**CPU Usage:** `{cpu_usage}%` \n ↳**RAM Usage:** `{ram_usage}%`",
+        text=f"**Bot Stats Of @{BOT_USERNAME}** \n\n**• Bot Version:** `V6.9.9` \n\n**• Users:** \n ↳**PM'ed Users:** `{total_users}` \n\n**DISK,** \n ↳**Total Disk Space:** `{total}` \n ↳**Used:** `{used}({disk_usage}%)` \n ↳**Free:** `{free}` \n\n**Hard Usage,** \n ↳**CPU Usage:** `{cpu_usage}%` \n ↳**RAM Usage:** `{ram_usage}%`",
         parse_mode="Markdown",
         quote=True
     )
@@ -55,7 +55,7 @@ async def chatcast(_, message: Message):
     sent=0
     failed=0
     if message.from_user.id not in SUDO_USERS:
-        await message.reply("Go away! This is not for you 😂!")
+        await message.reply("FCK OFF! GET SOME HELP")
         return
     else:
         wtf = await message.reply("`Starting a Chatcast...`")
@@ -72,7 +72,7 @@ async def chatcast(_, message: Message):
                 failed=failed+1
                 await wtf.edit(f"`ChatCasting...` \n\n**Sent to:** `{sent}` Chats \n**Failed in:** {failed} Chats")
             await asyncio.sleep(3)
-        await message.reply_text(f"`ChatCasting Finished 😌` \n\n**Sent to:** `{sent}` Chats \n**Failed in:** {failed} Chats")
+        await message.reply_text(f"`ChatCasting Finished` \n\n**Sent to:** `{sent}` Chats \n**Failed in:** {failed} Chats")
 
 
 # Ban User
@@ -80,7 +80,7 @@ async def chatcast(_, message: Message):
 async def ban(c: Client, m: Message):
     if len(m.command) == 1:
         await m.reply_text(
-            f"Use this command to ban Users from using this bot 🤒! Read __**/modhelp**__ to Learn how to use this 🤭!",
+            f"Use this command to ban Users from using this bot! Read __**/modhelp**__ to Learn how to use this 🤭!",
             quote=True
         )
         return
@@ -92,12 +92,12 @@ async def ban(c: Client, m: Message):
         try:
             await c.send_message(
                 user_id,
-                f"Lmao You are **Banned 😂!** \n\nReason: `{ban_reason}` \nDuration: `{ban_duration}` day(s). \n\n**Message From The Owner! Ask in **@Nexa_bots** if you think this was an mistake."
+                f"#BANNED You are **Banned!** \n\nReason: `{ban_reason}` \nDuration: `{ban_duration}` day(s). \n\n**Message From The Owner! Ask in **@Zer0ByteSupport** if you think this was a mistake."
             )
-            ban_log_text += '\n\nSuccessfully Notified About This Ban to that **Dumb User** 😅'
+            ban_log_text += '\n\nSuccessfully Notified About This Ban to that **Dumb User**'
         except:
             traceback.print_exc()
-            ban_log_text += f"\n\nKCUF! I can't Notify About This Ban to That **Dumb User** 🤯 \n\n`{traceback.format_exc()}`"
+            ban_log_text += f"\n\nKCUF! I can't Notify About This Ban to That **Dumb User** \n\n`{traceback.format_exc()}`"
         await db.ban_user(user_id, ban_duration, ban_reason)
         print(ban_log_text)
         await m.reply_text(
@@ -117,7 +117,7 @@ async def ban(c: Client, m: Message):
 async def unban(c: Client, m: Message):
     if len(m.command) == 1:
         await m.reply_text(
-            f"Use this command to ban Users from using this bot 🤒! Read __**/modhelp**__ to Learn how to use this 🤭!",
+            f"Use this command to ban Users from using this bot! Read __**/modhelp**__ to Learn how to use this!",
             quote=True
         )
         return
@@ -127,9 +127,9 @@ async def unban(c: Client, m: Message):
         try:
             await c.send_message(
                 user_id,
-                f"Good News! **You are Unbanned** 😊!"
+                f"Good News! **You are Unbanned**!"
             )
-            unban_log_text += '\n\nSuccessfully Notified About This to that **Good User** 😅'
+            unban_log_text += '\n\nSuccessfully Notified About This to that **User**'
         except:
             traceback.print_exc()
             unban_log_text += f"\n\nKCUF! I can't Notify About This to That **Dumb User** 🤯 \n\n`{traceback.format_exc()}`"
@@ -159,7 +159,7 @@ async def _banned_usrs(_, m: Message):
         banned_on = banned_user['ban_status']['banned_on']
         ban_reason = banned_user['ban_status']['ban_reason']
         banned_usr_count += 1
-        text += f"➬ **User ID**: `{user_id}`, **Ban Duration**: `{ban_duration}`, **Banned Date**: `{banned_on}`, **Ban Reason**: `{ban_reason}`\n\n"
+        text += f"‣ **User ID**: `{user_id}`, **Ban Duration**: `{ban_duration}`, **Banned Date**: `{banned_on}`, **Ban Reason**: `{ban_reason}`\n\n"
     reply_text = f"**Total Banned:** `{banned_usr_count}`\n\n{text}"
     if len(reply_text) > 4096:
         with open('banned-user-list.txt', 'w') as f:
@@ -215,7 +215,7 @@ async def updatebot(_, message: Message):
         exit()
         return
     else:
-        await msg.edit("`Heroku Detected!`")
+        await msg.edit("`Geyroku Detected!`")
         await msg.edit("`Updating and Restarting has Started! Please wait for 5-10 Minutes!`")
         ups_rem.fetch(U_BRANCH)
         repo.git.reset("--hard", "FETCH_HEAD")
