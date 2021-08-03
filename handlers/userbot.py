@@ -64,7 +64,7 @@ async def ubkickme(_, message: Message):
 @NEXAUB.on_message(filters.command("alive", [".", "/"]) & filters.me & ~filters.edited)
 async def ubalive(_, message: Message):
   alive_msg = await message.edit_text("`Processing...`")
-  alive_pic = "cache/NexaUB.jpg"
+  alive_pic = "https://telegra.ph/file/0004a38d64f3232d5231f.jpg"
   await message.reply_photo(alive_pic, caption=f"**Zer0Byte 2.0 Is Up and Running** \n\n**🔮 Zer0Byte Version** \n **🧬 ₿:** `{cp_version}` \n ↳**🔥 Pyrogram:** `{nexaub_version}` \n\n**🧬 Info**\n ↳**Music Bot:** @{BOT_USERNAME} \n ↳**Owner:** [Nub Here](tg://user?id={BOT_OWNER})")
   await alive_msg.delete()
 
