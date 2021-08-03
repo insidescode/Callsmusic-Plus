@@ -16,7 +16,7 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>tf? Add me as admin of yor group first! Then Use This Command!</b> 😄",
+            "<b>You Need To Promote Me Admin To Use That Command</b> :p",
         )
         return
 
@@ -27,21 +27,21 @@ async def addchannel(client, message):
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id,"Ok! I joined here as you requested! Don't Spam or Else I will f you! 😂")
+        await USER.send_message(message.chat.id,"🌟 Zer0Byte 2.0 Assistant Joined 🌟 Don't Spam or Else I will f you!")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>Streamer Account already in your chat!</b> Don't use commands like a <b>kid</b> 😒",
+            "<b>Zer0Byte 2.0 Assistant is already in your chat!</b> Don't use commands like a <b>kid</b>",
         )
         pass
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"Shit! <b>❌ Flood Wait Error ❌ \n Sorry! user {user.first_name} couldn't join your group due to heavy join requests! Also make sure streamer account is not banned in your group. ✅"
+            f"ERROR 404! <b>‼️ Flood Wait Error\n Sorry! user {user.first_name} couldn't join your group due to heavy join requests! Also make sure Zer0Byte Assistant account is not banned in your group. ✅"
             "\n\nOr you can manually add @{(await USER.get_me()).username} to your Group!</b> 😉",
         )
         return
     await message.reply_text(
-            "<b>Streamer Account Joined</b> 😊",
+            "<b>🌟 Zer0Byte 2.0 Assistant Joined 🌟</b>",
         )
 
 # Remove Bot and Streamer Account From the group
@@ -56,7 +56,7 @@ async def strmleavegrp(USER, message):
         await USER.leave_chat(message.chat.id)
     except:
         await message.reply_text(
-            f"<b>Oops! Streamer Account Can't Leave Right Now! May Be Floodwait 🤔"
-            "\n\nOr You Can Manually Remove @{(await USER.get_me()).username} 🤗</b>",
+            f"<b>🚫Oops! Zer0Byte 2.0 Assitant Can't Leave Right Now! May Be Floodwait🚫"
+            "\n\nOr You Can Manually Remove @{(await USER.get_me()).username}</b>",
         )
         return
