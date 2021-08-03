@@ -16,18 +16,18 @@ def is_that_owner(func):
     
     return ownermelol
 
-OWNER_TEXT = "**Hello My Master 😇!** Please select option from below buttons \n\n ~ @NexaBotsUpdates"
+OWNER_TEXT = "**Hey Master @deeprajk!** Please select option from below buttons \n\n ~ @Zer0ByteOfficial"
 
 OWNER_HELPCB=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⚙️ Owner Tools ⚙️", callback_data="cbownertools"
+                        "⚙️ Owner Tools", callback_data="cbownertools"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧑‍💻 User Help 🧑‍💻", callback_data="cbhelpmenu"
+                        "📚 User Help", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -42,7 +42,7 @@ async def cbownertools(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""**He he! You Opened Owner Menu!
 
-Please Select an Option From Below buttons 😊!**""",
+Please Select an Option From Below buttons!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -63,7 +63,7 @@ Please Select an Option From Below buttons 😊!**""",
                 ],
                 [
                     InlineKeyboardButton(
-                        "Heroku", callback_data="cbherokufuncs"
+                        "Geyroku/VPS", callback_data="cbherokufuncs"
                     )
                 ]
             ]
@@ -88,12 +88,12 @@ async def cbbans(_, query: CallbackQuery):
 
  - This will ban user with \nUser ID: `1234567891` \nFor: `2 Days` \nReason will be: `Test`
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+📣 Powered By: **@Zer0ByteOfficial**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "←", callback_data="cbownertools"
                     )
                 ]
             ]
@@ -118,12 +118,12 @@ async def cbunbans(_, query: CallbackQuery):
 
  - This will unban user with User ID: `1234567891`
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+📣 Powered By: **@Zer0ByteOfficial**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "←", callback_data="cbownertools"
                     )
                 ]
             ]
@@ -143,12 +143,12 @@ async def cbuserstats(_, query: CallbackQuery):
     - Send `/stats` command in Bot PM
 
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+📣 Powered By: **@Zer0ByteOfficial**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "←", callback_data="cbownertools"
                     )
                 ]
             ]
@@ -175,12 +175,12 @@ async def cbbroadcast(_, query: CallbackQuery):
      - Reply to a Text message with `/chatcast` command to Broadcast it using Streamer Account as a copy of that Message.
 
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+📣 Powered By: **@Zer0ByteOfficial**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "←", callback_data="cbownertools"
                     )
                 ]
             ]
@@ -192,7 +192,7 @@ Made with ❤️ by **@NexaBotsUpdates**""",
 @is_that_owner
 async def cbherokufuncs(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>Help For Heroku Plugin</b>
+        f"""<b>Help For Geyroku Plugin</b>
 
 **Feature:** Update, Restart, Set New Config  Vars, Delete Config Vars and Get Your Bot Logs inside Telegram!
 
@@ -222,12 +222,12 @@ async def cbherokufuncs(_, query: CallbackQuery):
        This will delete variable named  `THUMB_URL`
 
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+📣 Powered By: **@Zer0ByteOfficial**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "←", callback_data="cbownertools"
                     )
                 ]
             ]
