@@ -34,15 +34,15 @@ PLAYMSG_BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "⏸ Pause ⏸", callback_data="cbpause"
+                "⏸", callback_data="cbpause"
             ),
             InlineKeyboardButton(
-                "⏩ Skip ⏩", callback_data="cbskip"
+                "⏭", callback_data="cbskip"
             ),
         ],
         [
             InlineKeyboardButton(
-                "❌ Close ❌", callback_data="close"
+                "🗑 Close", callback_data="close"
             )
         ]
     ]
@@ -54,12 +54,12 @@ PLAYMSG_BUTTONS = InlineKeyboardMarkup(
 async def play(_, message: Message):
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
 
-    response = await message.reply_text("**Processing Your Song 😇...**")
+    response = await message.reply_text("**Processing Your Song...**")
 
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"Bruh! Videos longer than `{DURATION_LIMIT}` minute(s) aren’t allowed, the provided audio is {round(audio.duration / 60)} minute(s) 😒"
+                f"ERROR 69! Videos longer than `{DURATION_LIMIT}` minute(s) aren’t allowed, the provided audio is {round(audio.duration / 60)} minute(s)"
             )
 
         file_name = audio.file_unique_id + "." + (
@@ -110,12 +110,12 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file)
         MENTMEH = message.from_user.mention()
         await response.delete()
-        await message.reply_photo(thumb, caption=f"**Your Song Queued at position** `{position}`! \n**Requested by: {MENTMEH}**", reply_markup=PLAYMSG_BUTTONS)
+        await message.reply_photo(thumb, caption=f"**Your Song Queued at position** `{position}`! \n**Requested by: 👤{MENTMEH}**", reply_markup=PLAYMSG_BUTTONS)
     else:
         thumb = THUMB_URL
         await callsmusic.set_stream(message.chat.id, file)
         await response.delete()
-        await message.reply_photo(thumb, caption="**Playing Your Song 🎧...** \n**Requested by: {}**".format(message.from_user.mention()), reply_markup=PLAYMSG_BUTTONS)
+        await message.reply_photo(thumb, caption="**Playing Your Song...** \n**Requested by:👤 {}**".format(message.from_user.mention()), reply_markup=PLAYMSG_BUTTONS)
 
 
 # Pros reading this code be like: Wait wut? wtf? dumb? Me gonna die, lol etc.
@@ -125,7 +125,7 @@ async def play(_, message: Message):
 async def nplay(_, message: Message):
     global que
     
-    lel = await message.reply_text("**Processing Your Song 😇...**")
+    lel = await message.reply_text("**Processing Your Song...**")
     user_id = message.from_user.id
     user_name = message.from_user.first_name
 
@@ -159,7 +159,7 @@ async def nplay(_, message: Message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"Bruh! Videos longer than `{DURATION_LIMIT}` minute(s) aren’t allowed, the provided audio is {round(audio.duration / 60)} minute(s) 😒")
+             await lel.edit(f"ERROR 69! Videos longer than `{DURATION_LIMIT}` minute(s) aren’t allowed, the provided audio is {round(audio.duration / 60)} minute(s)")
              return
     except:
         pass    
@@ -170,9 +170,9 @@ async def nplay(_, message: Message):
         position = await queues.put(message.chat.id, file=file)
         MENTMEH = message.from_user.mention()
         await lel.delete()
-        await message.reply_photo(thumb, caption=f"**Your Song Queued at position** `{position}`! \n**Requested by: {MENTMEH}**", reply_markup=PLAYMSG_BUTTONS)
+        await message.reply_photo(thumb, caption=f"**Your Song Queued at position** `{position}`! \n**Requested by: 👤{MENTMEH}**", reply_markup=PLAYMSG_BUTTONS)
     else:
         thumb = THUMB_URL
         await callsmusic.set_stream(message.chat.id, file)
         await lel.delete()
-        await message.reply_photo(thumb, caption="**Playing Your Song 🎧...** \n**Requested by: {}**".format(message.from_user.mention()), reply_markup=PLAYMSG_BUTTONS)
+        await message.reply_photo(thumb, caption="**Playing Your Song...** \n**Requested by:👤 {}**".format(message.from_user.mention()), reply_markup=PLAYMSG_BUTTONS)
